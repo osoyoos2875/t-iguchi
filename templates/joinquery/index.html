@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+{% endblock title %}
+{% block links %}
+{% endblock links %}
+{% block content %}
+<h3>従業員データ一覧</h3>
+<table class="table table-bordered table-hover table-striped table-sm">
+    <thead>
+        <tr class="bg-primary text-white">
+            <th>id</th>
+            <th>empid</th>
+            <th>empname</th>
+            <th>deptid</th>
+            <th>deptname</th>
+            <th>mailaddress</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for entity in emplist %}
+        <tr>
+            <td>{{ entity.id }}</td>
+            <td>{{ entity.empid }}</td>
+            <td>{{ entity.empname }}</td>
+            <td>{{ entity.deptid }}</td>
+            <td>{{ entity.deptname }}</td>
+            <td>{{ entity.mailaddress }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}
+
+{% block script %}
+<script>
+    $(function(){
+    })
+</script>
+{% endblock %}
